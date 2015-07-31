@@ -1,0 +1,45 @@
+#tableros {
+	margin-bottom: 50px;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+#tableros h3{
+	text-decoration: underline;
+	text-align: center;
+}
+#tableros p{
+	margin: 15px;
+	font-size: 20px;
+	font-size: 2.0rem;
+	font-weight: 300;
+}
+#usuarios li{
+	padding: 10px;
+
+}
+#usuarios{
+	border-radius: 25px solid #891414;
+	
+}
+#tabla-productos{
+
+}
+#tabla-productos span{
+	margin: 5px;
+	padding: 15px;
+	font-size: 2.0rem;
+	color: #101944;
+}
+#myfirstchart{
+	height: 300px;
+}
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 100%
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
