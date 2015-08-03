@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="es" ng-app="routerApp">
+<html lang="es">
     <head>
         <meta charset=utf-8>
         <title>Inicio </title>
@@ -15,14 +15,19 @@
         <!-- JS (load angular, ui-router, and our custom js file) -->
         <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
-        <script src="js/app.js"></script>
+
     </head>  
     <!-- apply our angular app to our site -->
-    <body >
+    <body ng-app="app">
         <div class="container-fluid">
             <div ng-include="'templates/nav.html'"></div>
             <div ui-view></div>
             <div ng-include="'templates/pie.html'"></div>
         </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/controller/clienteCtrl.js"></script>
+    <script src="js/controller/proveedoresCtrl.js"></script>
+    
     </body>
 </html>

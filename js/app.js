@@ -1,23 +1,19 @@
-var routerApp = angular.module('routerApp', ['ui.router']);
-
-routerApp.config(function($stateProvider, $urlRouterProvider) {
+var app=angular
+    .module('app', ['ui.router'])
+    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     
     $urlRouterProvider.otherwise('/clientes');
     
     $stateProvider
         
-        // HOME STATES AND NESTED VIEWS ========================================
         .state('clientes', {
             url: '/clientes',
-            templateUrl: 'partial-clientes.html'
+            templateUrl: 'partial-clientes.html',
+            controller: 'clienteCtrl' 
         })
-        // nested list with custom controller
 	    .state('clientes.list', {
 	        url: '/list',
-	        templateUrl: 'partial-clientes-list.html',
-	        controller: function($scope) {
-	            $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
-	        }
+	        templateUrl: 'partial-clientes-list.html'
 	    })
 
 	    // nested list with just some random string data
@@ -40,31 +36,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 	            // for column two, we'll define a separate controller 
 	            'columnTwo@proveedores': { 
 	                templateUrl: 'table-data.html',
-	                controller: 'scotchController'
+	                controller: 'proveedoresCtrl'
 	            }
 	        }      
         });
         
-});
+}]);
 
-// let's define the scotch controller that we call up in the about state
-routerApp.controller('scotchController', function($scope) {
-    
-    $scope.message = 'test';
-   
-    $scope.scotches = [
-        {
-            name: 'Macallan 12',
-            price: 50
-        },
-        {
-            name: 'Chivas Regal Royal Salute',
-            price: 10000
-        },
-        {
-            name: 'Glenfiddich 1937',
-            price: 20000
-        }
-    ];
-    
-});
